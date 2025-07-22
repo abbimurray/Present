@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Invitation</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Gift Options</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Will You Go On A Date With Me?</h1>
-        <form id="dateForm">
-            <label for="date">Pick a Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Pick a Time:</label>
-            <input type="time" id="time" name="time" required>
-            
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" placeholder="Enter a location" required>
-            
-            <button type="submit">Send Invitation</button>
-        </form>
-        <p id="confirmationMessage" class="hidden"></p>
-    </div>
-    <script src="script.js"></script>
+  <h1>Happy Birthday!</h1>
+  <p>Click on a present to reveal the gift details:</p>
+
+  <div class="gift-grid">
+    <img src="/assets/images/giftbox.png" alt="Gift 1" class="present-box" onclick="showDetails(1)">
+    <img src="/assets/images/giftbox.png" alt="Gift 2" class="present-box" onclick="showDetails(2)">
+    <img src="/assets/images/giftbox.png" alt="Gift 3" class="present-box" onclick="showDetails(3)">
+    <img src="/assets/images/giftbox.png" alt="Gift 4" class="present-box" onclick="showDetails(4)">
+  </div>
+
+  <div id="details-1" class="gift-details">
+    <h2>Gift Option 1: A Romantic Dinner</h2>
+    <p>Enjoy a cozy evening with a romantic dinner at your favorite restaurant.</p>
+  </div>
+  <div id="details-2" class="gift-details">
+    <h2>Gift Option 2: A Weekend Getaway</h2>
+    <p>Pack your bags for a relaxing weekend escape to a beautiful destination.</p>
+  </div>
+  <div id="details-3" class="gift-details">
+    <h2>Gift Option 3: A Personalized Gift</h2>
+    <p>Something unique and meaningful, just for you. Let me surprise you!</p>
+  </div>
+  <div id="details-4" class="gift-details">
+    <h2>Gift Option 4: An Adventure Experience</h2>
+    <p>Get your adrenaline pumping with an exciting adventure activity.</p>
+  </div>
+
+  <!-- Form to select and submit the gift option -->
+  <form id="gift-form" action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+    <label for="gift-choice">Select your preferred gift option:</label>
+    <select id="gift-choice" name="gift-choice" required>
+      <option value="" disabled selected>Select an option</option>
+      <option value="Gift Option 1: A Romantic Dinner">Gift Option 1: A Romantic Dinner</option>
+      <option value="Gift Option 2: A Weekend Getaway">Gift Option 2: A Weekend Getaway</option>
+      <option value="Gift Option 3: A Personalized Gift">Gift Option 3: A Personalized Gift</option>
+      <option value="Gift Option 4: An Adventure Experience">Gift Option 4: An Adventure Experience</option>
+    </select>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function showDetails(option) {
+      const details = document.querySelectorAll('.gift-details');
+      details.forEach(detail => detail.style.display = 'none');
+      const selectedDetail = document.getElementById(`details-${option}`);
+      if (selectedDetail) {
+        selectedDetail.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
