@@ -5,9 +5,10 @@ body {
   }
   
   h1 {
+    margin-top: 20px;
     margin-bottom: 20px;
   }
-  
+
   .gift-grid {
     display: flex;
     gap: 10px;
@@ -19,6 +20,7 @@ body {
     height: 150px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-bottom: 20px;
   }
   
   .present-box:hover {
@@ -33,3 +35,61 @@ body {
     border-radius: 5px;
     background-color: #f9f9f9;
   }
+
+.gift-details h2 {
+    font-size: 3rem; /* Larger heading */
+    font-family: "Freckle Face", system-ui;
+    margin-bottom: 20px;
+}
+.gift-details p {
+    font-size: 1.5rem; /* Adjusted font size for paragraph */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.gift-details img {
+    width: 300px; /* Larger image size */
+    margin: 10px;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+.gift-details a {
+    font-size: 1.5rem;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.gift-details a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+  .gift-form {
+    margin-top: 40px;
+  }
+  .rubik-puddles-regular {
+    font-family: "Rubik Puddles", system-ui;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .freckle-face-regular {
+    font-family: "Freckle Face", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+h1{
+    font-family: "Freckle Face", system-ui;
+    margin-top: 50px;
+    font-size: 5rem;
+}  
+
+p{
+    margin-top: 20px;
+    font-size: 2rem;
+}
